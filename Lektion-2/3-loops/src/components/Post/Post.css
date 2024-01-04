@@ -1,0 +1,15 @@
+.Post {
+
+  .card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 5px #00000036;
+  
+    border: 1px solid #000;
+  }
+  .dark {
+    background-color: #333;
+    color: #fff;
+  }
+}
