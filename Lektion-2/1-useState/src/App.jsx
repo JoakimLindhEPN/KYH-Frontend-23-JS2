@@ -14,6 +14,11 @@ function App() {
     setCounter(prev => prev + 1)
   }
 
+  const decrement = () => {
+    if(counter <= 1) return
+    setCounter(prev => prev - 1)
+  }
+
   const [firstName, setFirstName] = useState('Joakim')
   const [lastName, setLastName] = useState('Wahlström')
 
