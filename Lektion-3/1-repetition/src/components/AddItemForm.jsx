@@ -2,9 +2,11 @@ import { useState } from "react"
 
 export const AddItemForm = ({ addItem }) => {
 
+
   const [productTitle, setProductTitle] = useState('')
 
   const [error, setError] = useState(null)
+
 
   const handleSubmit = e => {
     e.preventDefault()

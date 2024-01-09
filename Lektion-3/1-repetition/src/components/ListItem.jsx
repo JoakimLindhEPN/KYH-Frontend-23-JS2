@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export const ListItem = ({ item, removeItem, toggleComplete, changeItemText }) => {
 
@@ -40,8 +40,13 @@ export const ListItem = ({ item, removeItem, toggleComplete, changeItemText }) =
 
 
 const ChangeForm = ({ item, onChangeText }) => {
-
+  const inputRef = useRef(null)
   const [text, setText] = useState(item.product)
+
+  useEffect(() => {
+    inputRef.current.focus()
+    console.log(inputRef.current.value)
+  }, [])
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -50,8 +55,8 @@ const ChangeForm = ({ item, onChangeText }) => {
 
   return (
     <form onSubmit={handleSubmit} className="change-form">
-      <input type="text" value={text} onChange={e => setText(e.target.value)} />
-      <button className="btn btn-check"><i class="fa-solid fa-circle-check"></i></button>
+      <input ref={inputRef} type="text" value={text} onChange={e => setText(e.target.value)} />
+      <button className="btn btn-check"><i className="fa-solid fa-circle-check"></i></button>
     </form>
   )
 }

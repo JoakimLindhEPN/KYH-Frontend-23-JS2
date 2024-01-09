@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react"
 import { TodoItem } from "./TodoItem"
+import { useFetch } from "../../hooks/useFecth"
 
 
 export const TodoList = () => {
 
-  const [todos, setTodos] = useState([])
+  // const [todos, setTodos] = useState([])
   const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos')
 
   // const getTodos = useCallback(async () => {
@@ -14,15 +15,23 @@ export const TodoList = () => {
   //   setTodos(data)
   // }, [url])
 
-  useEffect(() => {
-    const getTodos = async () => {
-      const res = await fetch(url)
-      const data = await res.json()
-      console.log(data)
-      setTodos(data)
-    }
-    getTodos()
-  }, [url])
+  // useEffect(() => {
+  //   const getTodos = async () => {
+  //     const res = await fetch(url)
+  //     const data = await res.json()
+  //     console.log(data)
+  //     setTodos(data)
+  //   }
+  //   getTodos()
+  // }, [url])
+
+  const { data: todos, loading, error } = useFetch(url, { method: 'GET' })
+
+  if(error) return <p>{error}</p>
+
+  if(loading) return (
+    <p>Loading...</p>
+  )
 
   return (
     <div className="todo-list">
