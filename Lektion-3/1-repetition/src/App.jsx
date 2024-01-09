@@ -24,13 +24,34 @@ function App() {
     },
   ])
 
+  const clearList = () => {
+    setItems([])
+  }
+
+  const addItem = (product) => {
+    setItems(prevItems => {
+
+      const newItem = {
+        id: crypto.randomUUID(),
+        product,
+        completed: false
+      }
+
+      return [newItem, ...prevItems]
+    })
+  }
+
+  const removeItem = (id) => {
+    setItems(prevItems => prevItems.filter(item => item.id !== id))
+  }
+
   return (
     <div className="App container">
       <div className="card">
-        <Header />
+        <Header clearList={clearList} />
 
-        <ShoppingList items={items} />
-        <AddItemForm />
+        <ShoppingList items={items} removeItem={removeItem} />
+        <AddItemForm addItem={addItem} />
       </div>
     </div>
   )

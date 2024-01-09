@@ -1,8 +1,8 @@
-export const Header = () => {
+export const Header = ({ clearList }) => {
   return (
     <header className="header">
       <h1>Shopping list</h1>
-      <button className="clear-btn">Clear List</button>
+      <button onClick={clearList} className="clear-btn">Clear List</button>
     </header>
   )
 }
