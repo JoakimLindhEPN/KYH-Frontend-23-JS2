@@ -1,24 +1,37 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { TodoItem } from "./TodoItem"
 
-const todos = [
-  {
-    id: 1,
-    title: 'todo 1',
-    completed: false
-  },
-  {
-    id: 2,
-    title: 'todo 2',
-    completed: false
-  },
-]
 
 export const TodoList = () => {
+
+  const [todos, setTodos] = useState([])
+  const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos')
+
+  // const getTodos = useCallback(async () => {
+  //   const res = await fetch(url)
+  //   const data = await res.json()
+  //   console.log(data)
+  //   setTodos(data)
+  // }, [url])
+
+  useEffect(() => {
+    const getTodos = async () => {
+      const res = await fetch(url)
+      const data = await res.json()
+      console.log(data)
+      setTodos(data)
+    }
+    getTodos()
+  }, [url])
+
   return (
     <div className="todo-list">
+      <button className="btn" onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos')}>All users</button>
+      <button className="btn" onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos?userId=1')}>user 1</button>
+      <button className="btn" onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos?userId=2')}>user 2</button>
+      <button className="btn" onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos?userId=3')}>user 3</button>
       {
-        todos.map(todo => (
+        todos && todos.map(todo => (
           <TodoItem key={todo.id} todo={todo} />
         ))
       }
