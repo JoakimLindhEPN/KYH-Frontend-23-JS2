@@ -1,0 +1,15 @@
+.input-group {
+  margin-bottom: 1rem;
+
+  & label {
+    display: block;
+
+  }
+
+  & input {
+    width: 100%;
+    padding: .5em;
+    border-radius: .4em;
+    border: 1px solid #000;
+  }
+}
