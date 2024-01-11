@@ -1,0 +1,15 @@
+.title-component {
+  text-align: center;
+  margin: 2rem;
+  
+  .title {
+    margin-bottom: .5rem;
+    color: blueviolet;
+  }
+
+
+}
+
+.title-component .subtitle {
+  color: #555;
+}

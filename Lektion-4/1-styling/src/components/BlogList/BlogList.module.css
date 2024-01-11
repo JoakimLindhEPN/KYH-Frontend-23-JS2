@@ -1,0 +1,12 @@
+.card-test {
+  border: 1px solid #eee;
+  box-shadow: 3px 3px 7px #00000033;
+  padding: .6rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-test button {
+  background-color: #333;
+  color: #fff;
+}
