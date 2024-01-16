@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wrapper {
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.left {
+  background-color: darkslateblue;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.right {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.reg-form {
+  width: 100%;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-label,
+.form-control {
+  display: block;
+  width: 100%;
+}
+.form-label {
+  margin-bottom: .4rem;
+}
+.form-control {
+  padding: .5em;
+  border-radius: .5em;
+  border: 1px solid #b4b4b4;
+  font-size: 1rem;
+}
+.form-control:focus {
+  outline-color: darkslateblue;
+}
+.invalid-input {
+  color: firebrick;
+  font-size: .9rem;
+}
+
+.btn {
+  padding: .6em 2em;
+  border: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: .5em;
+  transition: background-color 150ms ease;
+}
+
+.btn-primary {
+  background-color: darkslateblue;
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: hsl(248, 39%, 30%);
+}
+
+.main-error {
+  background-color: hsla(0, 68%, 42%, 0.264);
+  color: hsl(0, 68%, 35%);
+  padding: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+
+  & svg {
+    font-size: 1.5rem;
+  }
+}
+.mt-2 {
+  margin-top: 5rem;
+}
