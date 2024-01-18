@@ -12,19 +12,6 @@ import CreatePostPage from './pages/CreatePostPage'
 
 function App() {
 
-  const [posts, setPosts] = useState([
-    {
-      id: 1, 
-      title: 'Post 1',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quasi.'
-    },
-    {
-      id: 2, 
-      title: 'Post 2',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quasi.'
-    }
-  ])
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -37,7 +24,7 @@ function App() {
         },
         {
           path: 'posts',
-          element: <PostsPage posts={posts} />
+          element: <PostsPage />
         },
         {
           path: 'create',

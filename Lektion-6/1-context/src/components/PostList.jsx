@@ -11,3 +11,12 @@ export const PostList = ({ posts }) => {
     </div>
   )
 }
+
+
+PostList.Skeleton = () => {
+  return (
+    <div className="bg-gray-200 w-full h-48">
+      asdas
+    </div>
+  )
+}
