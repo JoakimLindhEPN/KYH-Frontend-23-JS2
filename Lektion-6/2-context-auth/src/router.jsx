@@ -5,6 +5,8 @@ import Home from "./app/public/Home";
 import AuthLayout from "./app/auth/AuthLayout";
 import LoginPage from "./app/auth/LoginPage";
 import RegisterPage from "./app/auth/RegisterPage";
+import PrivateLayout from "./app/private/PrivateLayout";
+import PrivatePage from "./app/private/PrivatePage";
 
 
 export const router = createBrowserRouter([
@@ -42,10 +44,16 @@ export const router = createBrowserRouter([
 
 
 
-      // {
-      //   path: "private",
-      //   element: <PrivateLayout />
-      // }
+      {
+        path: "private",
+        element: <PrivateLayout />,
+        children: [
+          {
+            index: true,
+            element: <PrivatePage />
+          }
+        ]
+      }
     ]
   }
 ])
