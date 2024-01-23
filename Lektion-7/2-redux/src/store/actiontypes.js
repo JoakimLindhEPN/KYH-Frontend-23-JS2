@@ -11,6 +11,11 @@ const actiontypes = () => {
     quantity: {
       increment: 'INCREMENT_QUANTITY',
       decrement: 'DECREMENT_QUANTITY'
+    },
+    todos: {
+      load: 'LOAD_TODOS',
+      loadSuccess: 'LOAD_TODOS_SUCCESS',
+      loadFailure: 'LOAD_TODOS_FAILURE'
     }
   }
 }
