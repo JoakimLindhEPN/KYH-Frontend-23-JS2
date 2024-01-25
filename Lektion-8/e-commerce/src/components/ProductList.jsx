@@ -12,8 +12,11 @@ export const ProductList = ({ products }) => {
 
 ProductList.Skeleton = () => {
   return (
-    <div className="bg-red-500 p-5">
-      sadfsd
+    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
     </div>
   )
 }

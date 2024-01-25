@@ -21,7 +21,11 @@ function HomePage() {
 
   return (
     <div  className="mt-10">
-      <ProductList.Skeleton products={products} />
+      {
+        loading 
+        ? <ProductList.Skeleton />
+        : <ProductList products={products} />
+      }
     </div>
   )
 }

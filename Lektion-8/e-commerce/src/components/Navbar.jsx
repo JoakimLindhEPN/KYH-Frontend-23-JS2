@@ -1,6 +1,7 @@
 import { IoLogoOctocat } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { Dropdown } from "./Dropdown";
 
 export const Navbar = () => {
   return (
@@ -14,7 +15,9 @@ export const Navbar = () => {
         <ul className="flex items-center gap-4">
           <li><NavLink to="/" className="text-white">Home</NavLink></li>
           <li>
-            <FaShoppingCart className="text-white h-5 w-5 cursor-pointer" />
+            <Dropdown>
+              <FaShoppingCart className="text-white h-5 w-5 cursor-pointer" />
+            </Dropdown>
           </li>
         </ul>
       </div>
