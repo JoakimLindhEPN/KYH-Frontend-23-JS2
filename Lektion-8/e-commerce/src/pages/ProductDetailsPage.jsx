@@ -4,13 +4,16 @@ import axios from 'axios'
 import { BiSolidCartAdd } from "react-icons/bi";
 import { useDispatch } from 'react-redux'
 import { addToCart } from "../store/features/shoppingCart/shoppingCartSlice";
+import { useCart } from "../contexts/cartContext";
 
 
 function ProductDetailsPage() {
 
   const { productId } = useParams()
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
+
+  const { addToCart } = useCart()
 
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -37,7 +40,8 @@ function ProductDetailsPage() {
   }, [])
 
   const handleClick = () => {
-    dispatch(addToCart(product))
+    // dispatch(addToCart(product))
+    addToCart(product)
   }
 
   if(loading) {
